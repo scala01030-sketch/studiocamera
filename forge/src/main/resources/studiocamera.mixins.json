@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "studio.camera.mixin",
+  "plugin": "studio.camera.mixin.CameraMixinPlugin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "studiocamera.refmap.json",
+  "client": ["CameraMixin", "KeyboardMixin", "MouseMixin", "PlayerInputMixin", "GameInputMixin", "GameRendererMixin"],
+  "injectors": {"defaultRequire": 1}
+}

@@ -1,0 +1,37 @@
+plugins { id 'java'; id 'net.minecraftforge.gradle' version '6.0.54' }
+version = '0.1.0'
+group = 'studio.camera'
+base { archivesName = 'studiocamera-forge-1.20.1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+sourceSets.main.java.srcDir '../common/src/main/java'
+sourceSets.main.resources.srcDir '../common/src/main/resources'
+sourceSets.test.java.srcDir '../common/src/test/java'
+minecraft { mappings channel: 'official', version: '1.20.1' }
+repositories { mavenCentral() }
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.10'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5'
+    annotationProcessor 'com.google.code.gson:gson:2.10'
+    annotationProcessor 'com.google.guava:guava:31.1-jre'
+    annotationProcessor 'org.ow2.asm:asm-tree:9.8'
+    annotationProcessor 'org.ow2.asm:asm-util:9.8'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.named('compileJava', JavaCompile) {
+    dependsOn 'createMcpToSrg'
+    options.compilerArgs += ["-AreobfTsrgFile=${layout.buildDirectory.get()}/createMcpToSrg/output.tsrg".toString(),
+        "-AoutRefMapFile=${layout.buildDirectory.get()}/generated/studiocamera.refmap.json".toString(),
+        "-AoutTsrgFile=${layout.buildDirectory.get()}/generated/studiocamera-mixin.tsrg".toString(), '-AmappingTypes=tsrg']
+}
+tasks.named('jar', Jar) {
+    from('../LICENSE')
+    from(layout.buildDirectory.file('generated/studiocamera.refmap.json'))
+    manifest.attributes('MixinConfigs': 'studiocamera.mixins.json')
+    finalizedBy 'reobfJar'
+}
+tasks.configureEach {
+    if (name == 'reobfJar') extraMappings.from(layout.buildDirectory.file('generated/studiocamera-mixin.tsrg'))
+}
+tasks.named('test', Test) { useJUnitPlatform() }

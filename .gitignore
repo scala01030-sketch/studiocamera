@@ -1,0 +1,13 @@
+.toolchain/
+**/.gradle/
+**/build/
+build/
+release/
+**/run/
+**/logs/
+**/.mixin.out/
+*.args
+*.hprof
+hs_err_pid*.log
+.idea/
+*.iml

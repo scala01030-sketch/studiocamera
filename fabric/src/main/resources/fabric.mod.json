@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "studiocamera",
+  "version": "0.1.0",
+  "name": "Studio Camera",
+  "description": "Detached photography camera. Automatically disabled when Pose Studio is installed.",
+  "authors": ["Studio Camera contributors"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {"client": ["studio.camera.StudioCamera"]},
+  "mixins": ["studiocamera.mixins.json"],
+  "depends": {"fabricloader": ">=0.19.3", "minecraft": "1.21.11", "java": ">=21", "fabric-api": "*"}
+}
