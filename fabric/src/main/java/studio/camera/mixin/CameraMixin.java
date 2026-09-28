@@ -23,7 +23,7 @@ public abstract class CameraMixin {
     private void camera$view(World world,Entity entity,boolean third,boolean inverse,float delta,CallbackInfo ci) {
         if(!CameraSession.INSTANCE.active)return;
         var c=CameraSession.INSTANCE.camera;thirdPerson=true;setPos(c.x,c.y,c.z);setRotation((float)c.yaw,(float)c.pitch);
-        // World render state and view matrix both consume this quaternion; roll must affect both.
+
         rotation.rotateZ((float)-Math.toRadians(c.roll));
         horizontalPlane.set(0,0,-1).rotate(rotation);
         verticalPlane.set(0,1,0).rotate(rotation);

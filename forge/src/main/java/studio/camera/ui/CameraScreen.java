@@ -12,7 +12,7 @@ import org.lwjgl.glfw.GLFW;
 import studio.camera.client.CameraKeys;
 import studio.camera.client.CameraSession;
 
-/** A non-pausing screen: the world remains the viewport. Each drag is one undo step. */
+
 public final class CameraScreen extends Screen {
     private final CameraSession s=CameraSession.INSTANCE;
     private final List<EditBox> values=new ArrayList<>();
@@ -66,7 +66,7 @@ public final class CameraScreen extends Screen {
     }
     @Override public boolean keyPressed(int key,int scan,int mods) {
         if(key==GLFW.GLFW_KEY_Z&&(mods&GLFW.GLFW_MOD_CONTROL)!=0) {
-            // Text boxes keep their native text editing shortcut when focused.
+
             if(getFocused() instanceof EditBox)return super.keyPressed(key,scan,mods);
             s.undo();return true;
         }

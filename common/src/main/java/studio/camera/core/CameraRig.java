@@ -3,7 +3,7 @@ package studio.camera.core;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-/** Platform independent static camera, angles in degrees and position in world blocks. */
+
 public final class CameraRig {
     public double x, y, z, yaw, pitch, roll, fov = 70, speed = 5;
     private final Deque<Snapshot> history = new ArrayDeque<>();

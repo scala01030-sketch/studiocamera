@@ -1,11 +1,11 @@
 # Studio Camera / 摄影机工作台
 
-从 Pose Studio 提取的独立客户端摄影机模组。当前版本：**0.1.0**。
+从 Pose Studio 提取的独立客户端摄影机模组。当前版本：**0.1.1**。
 
 | 安装包 | Minecraft | 加载器 | Java | 必需依赖 |
 | --- | --- | --- | --- | --- |
-| `studiocamera-forge-1.20.1-0.1.0.jar` | Java Edition 1.20.1 | Forge 47.4.10 或更新的 47.x | 17 | 无其他模组 |
-| `studiocamera-fabric-1.21.11-0.1.0.jar` | Java Edition 1.21.11 | Fabric Loader 0.19.5；也支持 0.19.3 | 21 | Fabric API，测试版本 0.141.6+1.21.11 |
+| `studiocamera-forge-1.20.1-0.1.1.jar` | Java Edition 1.20.1 | Forge 47.4.10 或更新的 47.x | 17 | 无其他模组 |
+| `studiocamera-fabric-1.21.11-0.1.1.jar` | Java Edition 1.21.11 | Fabric Loader 0.19.5；也支持 0.19.3 | 21 | Fabric API，测试版本 0.141.6+1.21.11 |
 
 把与你的游戏版本对应的 **一份 JAR** 放入该实例的 `mods` 文件夹。模组只需安装在客户端，不注册服务器网络协议、实体或物品。
 

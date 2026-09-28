@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "studiocamera",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "Studio Camera",
   "description": "Detached photography camera. Automatically disabled when Pose Studio is installed.",
   "authors": ["Studio Camera contributors"],

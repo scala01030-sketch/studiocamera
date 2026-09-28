@@ -62,7 +62,7 @@ public final class CameraSession {
         boolean changed=forward!=0||side!=0||up!=0||roll!=0||zoom!=0;
         if(changed && !moving) camera.beginGesture(); moving=changed;
         camera.move(forward,side,up,roll,zoom,down(w,GLFW.GLFW_KEY_LEFT_CONTROL)>0,dt);
-        // A mouse turn shares the current movement transaction until all input is idle.
+
         if(!moving && !looking) camera.endGesture(); looking=false;
     }
     private static int down(long w,int k) { return GLFW.glfwGetKey(w,k)==GLFW.GLFW_PRESS?1:0; }

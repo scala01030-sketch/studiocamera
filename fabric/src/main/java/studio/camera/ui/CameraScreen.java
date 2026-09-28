@@ -12,7 +12,7 @@ import org.lwjgl.glfw.GLFW;
 import studio.camera.client.CameraKeys;
 import studio.camera.client.CameraSession;
 
-/** A non-pausing screen: the world remains the viewport. Each drag is one undo step. */
+
 public final class CameraScreen extends Screen {
     private final CameraSession s=CameraSession.INSTANCE;
     private final List<TextFieldWidget> values=new ArrayList<>();
@@ -24,7 +24,7 @@ public final class CameraScreen extends Screen {
     public CameraScreen() {super(Text.translatable("studiocamera.title"));}
     @Override public boolean shouldPause() {return false;}
     @Override public void renderBackground(DrawContext context,int mouseX,int mouseY,float delta) {
-        // The live world is the editor viewport; vanilla's menu blur obscures the composition.
+
     }
     @Override protected void init() {refresh();}
     private ButtonWidget button(String key,int x,int y,int width,Runnable action) {
@@ -70,7 +70,7 @@ public final class CameraScreen extends Screen {
     @Override public boolean keyPressed(net.minecraft.client.input.KeyInput input) {
         int key=input.key(),scan=input.scancode(),mods=input.modifiers();
         if(key==GLFW.GLFW_KEY_Z&&(mods&GLFW.GLFW_MOD_CONTROL)!=0) {
-            // Text boxes keep their native text editing shortcut when focused.
+
             if(getFocused() instanceof TextFieldWidget)return super.keyPressed(input);
             s.undo();return true;
         }

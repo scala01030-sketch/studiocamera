@@ -4,7 +4,7 @@ license="MIT"
 clientSideOnly=true
 [[mods]]
 modId="studiocamera"
-version="0.1.0"
+version="0.1.1"
 displayName="Studio Camera"
 displayTest="IGNORE_ALL_VERSION"
 authors="Studio Camera contributors"

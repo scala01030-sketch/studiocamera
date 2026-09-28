@@ -10,7 +10,6 @@ foreach($target in $platforms){
     if($target -eq 'forge'){
         $env:JAVA_HOME=Join-Path $root '.toolchain\jdk17'
         $env:GRADLE_USER_HOME=Join-Path $root '.toolchain\gradle-user-home'
-        # Optional E-local development cache. The published source can build independently.
         if($env:STUDIOCAMERA_FORGE_CACHE){
             if([IO.Path]::GetPathRoot($env:STUDIOCAMERA_FORGE_CACHE) -ne 'E:\'){throw 'Forge cache must be on E:'}
             $env:GRADLE_USER_HOME=$env:STUDIOCAMERA_FORGE_CACHE

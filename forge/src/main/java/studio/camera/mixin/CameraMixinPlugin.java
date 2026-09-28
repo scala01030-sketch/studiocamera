@@ -7,7 +7,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-/** Decide before target classes are transformed: coexistence must have zero camera injections. */
+
 public final class CameraMixinPlugin implements IMixinConfigPlugin {
     @Override public void onLoad(String packageName) {}
     @Override public boolean shouldApplyMixin(String target, String mixin) {
